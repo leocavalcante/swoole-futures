@@ -6,9 +6,9 @@
 composer require leocavalcante/swoole-futures
 ```
 
-## Async / Await
+## Async / await
 
-Creates and awaits asynchronous computations in an alternative way from Swoole's coroutines. 
+Creates and awaits for asynchronous computations in an alternative way from Swoole's coroutines. 
 
 ```php
 $future = Futures\async(fn() => /* Async Computation */);
@@ -34,3 +34,31 @@ $n = Futures\join([$n1, $n2, $n3]);
 print_r($n->await());
 ```
 This takes 3 seconds, not 9, Futures runs in parallel! (Order isn't guaranteed)
+
+## Race
+
+Returns the result of the first finished Future.
+
+```php
+$site1 = Futures\async(function() {
+    $client = new Client('www.google.com', 443, true);
+    $client->get('/');
+    return $client->body;
+});
+
+$site2 = Futures\async(function() {
+    $client = new Client('www.swoole.co.uk', 443, true);
+    $client->get('/');
+    return $client->body;
+});
+
+$site3 = Futures\async(function() {
+    $client = new Client('leocavalcante.dev', 443, true);
+    $client->get('/');
+    return $client->body;
+});
+
+$first_to_load = Futures\race([$site1, $site2, $site3]);
+
+echo $first_to_load;
+``` 

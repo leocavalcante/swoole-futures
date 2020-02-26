@@ -31,3 +31,19 @@ function join(array $futures): Future
         return $results;
     });
 }
+
+/**
+ * @param Future[] $futures
+ * @return mixed
+ */
+function race(array $futures)
+{
+    $len = sizeof($futures);
+    $chan = new Channel($len);
+
+    foreach ($futures as $f) {
+        go(fn() => $chan->push($f->await()));
+    }
+
+    return $chan->pop();
+}
