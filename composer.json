@@ -1,0 +1,36 @@
+{
+    "name": "leocavalcante/swoole-futures",
+    "description": "Futures + async/await for PHP's Swoole concurrency run-time.",
+    "type": "library",
+    "require-dev": {
+        "swoole/ide-helper": "^4.4",
+        "phpunit/phpunit": "^9.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "leocavalcante",
+            "email": "lc@leocavalcante.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "files": [
+            "src/functions.php"
+        ],
+        "psr-4": {
+            "Futures\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Futures\\Test\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
