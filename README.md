@@ -1,6 +1,8 @@
 # Swoole Futures
 
-⏳ Futures + Async/Await for PHP's Swoole Concurrency Runtime.
+⏳ Futures + Async/Await for PHP's [Swoole](https://www.swoole.co.uk/) asynchronous run-time.
+
+> Inspired by [futures Crate](https://crates.io/crates/futures) for Rust's Tokio asynchronous run-time.
 
 ## Install
 
