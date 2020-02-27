@@ -47,3 +47,13 @@ function race(array $futures)
 
     return $chan->pop();
 }
+
+/**
+ * @param array $arr
+ * @param callable $callback
+ * @return Future[]
+ */
+function async_map(array $arr, callable $callback): array
+{
+    return array_map(fn($item): Future => async(fn() => $callback($item)), $arr);
+}

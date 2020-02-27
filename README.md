@@ -37,7 +37,7 @@ $n = Futures\join([$n1, $n2, $n3]);
 
 print_r($n->await());
 ```
-This takes 3 seconds, not 9, Futures runs in parallel! (Order isn't guaranteed)
+This takes 3 seconds, not 9, Futures runs concurrently! (Order isn't guaranteed)
 
 ### Race
 
@@ -66,3 +66,17 @@ $first_to_load = Futures\race([$site1, $site2, $site3]);
 
 echo $first_to_load;
 ``` 
+
+# Async map
+
+Maps a array into a list of Futures where which item runs concurrently.
+
+```php
+$list = [1, 2, 3];
+$multiply = fn(int $a) => fn(int $b) => $a * $b;
+$double = $multiply(2);
+
+$doubles = Futures\join(Futures\async_map($list, $double))->await();
+
+print_r($doubles);
+```
