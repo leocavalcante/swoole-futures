@@ -67,7 +67,7 @@ $first_to_load = Futures\race([$site1, $site2, $site3]);
 echo $first_to_load;
 ``` 
 
-# Async map
+### Async map
 
 Maps a array into a list of Futures where which item runs concurrently.
 
