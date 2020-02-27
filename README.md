@@ -10,6 +10,11 @@ composer require leocavalcante/swoole-futures
 
 ## Usage
 
+* [Basic / Hello, world!](#async--await)
+* [Join](#join)
+* [Race](#race)
+* [Async map](#async-map)
+
 ### Async / await
 
 Creates and awaits for asynchronous computations in an alternative style than Swoole's coroutines. 
