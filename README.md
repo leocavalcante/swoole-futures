@@ -1,6 +1,6 @@
 # Swoole Futures
 
-⏳ Futures + async/await for PHP's Swoole concurrency run-time.
+⏳ Futures + Async/Await for PHP's Swoole Concurrency Runtime.
 
 ## Install
 
@@ -20,9 +20,11 @@ composer require leocavalcante/swoole-futures
 Creates and awaits for asynchronous computations in an alternative style than Swoole's coroutines. 
 
 ```php
-$future = Futures\async(fn() => /* Async Computation */);
+$future = Futures\async(/* Async Computation */);
 $result = $future->await();
 ```
+
+Futures are lazy, it only runs when you call `await`. 
 
 ### Join
 
@@ -74,7 +76,7 @@ echo $first_to_load;
 
 ### Async map
 
-Maps a array into a list of Futures where which item runs concurrently.
+Maps an array into a list of Futures where which item runs concurrently.
 
 ```php
 $list = [1, 2, 3];
