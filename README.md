@@ -4,7 +4,7 @@
 
 > Inspired by [futures Crate](https://crates.io/crates/futures) for Rust's Tokio asynchronous run-time.
 
-It's on top of [Swoole's Co-routine system](https://www.swoole.co.uk/coroutine) there is not special wizardry, just sugar.
+It's on top of [Swoole's Co-routine system](https://www.swoole.co.uk/coroutine) there is no special wizardry, just sugar.
 
 ## Install
 
