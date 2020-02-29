@@ -18,6 +18,7 @@ composer require leocavalcante/swoole-futures
 * [Join](#join)
 * [Race](#race)
 * [Async map](#async-map)
+* [Then](#then)
 
 ### Async / await
 
@@ -91,3 +92,20 @@ $doubles = Futures\join(Futures\async_map($list, $double))->await();
 
 print_r($doubles);
 ```
+
+### Then
+
+Sequences a series of steps for a Future, is the serial analog for `join`:
+
+```php
+$future = Futures\async(fn() => 2)
+    ->then(fn(int $i) => Futures\async(fn() => $i + 3))
+    ->then(fn(int $i) => Futures\async(fn() => $i * 4))
+    ->then(fn(int $i) => Futures\async(fn() => $i - 5));
+
+echo $future->await(); // 15
+```
+
+---
+
+MIT &copy; 2020

@@ -8,10 +8,10 @@ use function Futures\async;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 Co\run(function () {
-    $fut = async(fn() => 2)
+    $future = async(fn() => 2)
         ->then(fn(int $i) => async(fn() => $i + 3))
         ->then(fn(int $i) => async(fn() => $i * 4))
         ->then(fn(int $i) => async(fn() => $i - 5));
 
-    echo $fut->await();
+    echo $future->await(); // 15
 });
