@@ -1,6 +1,7 @@
 # Swoole Futures
 
-![](https://github.com/leocavalcante/swoole-futures/workflows/CI/badge.svg)
+![https://github.com/leocavalcante/swoole-futures/actions?query=workflow%3ACI](https://github.com/leocavalcante/swoole-futures/workflows/CI/badge.svg)
+![https://shepherd.dev/github/leocavalcante/swoole-futures](https://shepherd.dev/github/leocavalcante/swoole-futures/coverage.svg)
 
 ⏳ Futures + Async/Await for PHP's [Swoole](https://www.swoole.co.uk/) asynchronous run-time.
 
@@ -18,7 +19,7 @@ composer require leocavalcante/swoole-futures
 
 * [Basic / Hello, world!](#async--await)
 * [Join](#join)
-* [Race](#race)
+* [Race / Select](#race)
 * [Async map](#async-map)
 * [Then](#then)
 
@@ -81,7 +82,9 @@ $site3 = Futures\async(function() {
 $first_to_load = Futures\race([$site1, $site2, $site3]);
 
 echo $first_to_load;
-``` 
+```
+
+And there is a `Futures\select` alias.
 
 ### Async map
 
