@@ -7,14 +7,16 @@ use Swoole\Coroutine\Channel;
 /**
  * @template T
  */
-class Future
+final class Future
 {
-    /** @var callable(...mixed): T */
+    /**
+     * @var callable(): T
+     */
     private $computation;
     private Channel $channel;
 
     /**
-     * @param callable(...mixed): T $computation
+     * @param callable(): T $computation
      */
     public function __construct(callable $computation)
     {
@@ -23,11 +25,18 @@ class Future
     }
 
     /**
-     * @return T
+     * @return mixed
+     * @psalm-return T
      */
     public function await()
     {
-        go(fn() => $this->channel->push(($this->computation)()));
+        go(
+            static function (): void {
+                $this->channel->push(($this->computation)());
+            }
+        );
+
+        /** @psalm-var T */
         return $this->channel->pop();
     }
 }

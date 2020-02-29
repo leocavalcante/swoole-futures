@@ -2,8 +2,14 @@
 
 namespace Futures;
 
-use Co\Channel;
+use Swoole\Coroutine\Channel;
 
+/**
+ * @template T
+ * @param callable(): T $computation
+ * @return Future
+ * @psalm-return Future<T>
+ */
 function async(callable $computation): Future
 {
     return new Future($computation);
@@ -15,16 +21,21 @@ function async(callable $computation): Future
  */
 function join(array $futures): Future
 {
-    return async(function () use ($futures): array {
+    return async(static function () use ($futures): array {
         $len = sizeof($futures);
         $chan = new Channel($len);
         $results = [];
 
-        foreach ($futures as $f) {
-            go(fn() => $chan->push($f->await()));
+        foreach ($futures as $future) {
+            go(
+                static function () use ($chan, $future): void {
+                    $chan->push($future->await());
+                }
+            );
         }
 
         for ($i = 0; $i < $len; $i++) {
+            /** @var mixed */
             $results[] = $chan->pop();
         }
 
@@ -41,8 +52,12 @@ function race(array $futures)
     $len = sizeof($futures);
     $chan = new Channel($len);
 
-    foreach ($futures as $f) {
-        go(fn() => $chan->push($f->await()));
+    foreach ($futures as $future) {
+        go(
+            static function () use ($chan, $future): void {
+                $chan->push($future->await());
+            }
+        );
     }
 
     return $chan->pop();
@@ -55,5 +70,14 @@ function race(array $futures)
  */
 function async_map(array $arr, callable $callback): array
 {
-    return array_map(fn($item): Future => async(fn() => $callback($item)), $arr);
+    return array_map(
+        static function ($item) use ($callback): Future {
+            return async(
+                static function () use ($callback, $item): void {
+                    $callback($item);
+                }
+            );
+        },
+        $arr
+    );
 }

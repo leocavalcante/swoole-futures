@@ -4,7 +4,8 @@
     "type": "library",
     "require-dev": {
         "swoole/ide-helper": "^4.4",
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^9.0",
+        "vimeo/psalm": "^3.9"
     },
     "license": "MIT",
     "authors": [
@@ -31,6 +32,7 @@
         }
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "phpunit",
+        "lint": "psalm"
     }
 }
