@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "8e2ca4cfb5a0bfe6b5d89284cae1c734",
+  "content-hash": "70cc32963a1d3e3139f6c08d4ea3f422",
   "packages": [],
   "packages-dev": [
     {
@@ -269,23 +269,23 @@
         "doctrine/coding-standard": "^6.0",
         "ext-pdo": "*",
         "ext-phar": "*",
-                "phpbench/phpbench": "^0.13",
-                "phpstan/phpstan-phpunit": "^0.11",
-                "phpstan/phpstan-shim": "^0.11",
-                "phpunit/phpunit": "^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
+        "phpbench/phpbench": "^0.13",
+        "phpstan/phpstan-phpunit": "^0.11",
+        "phpstan/phpstan-shim": "^0.11",
+        "phpunit/phpunit": "^7.0"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "1.2.x-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
       "license": [
         "MIT"
       ],
@@ -413,19 +413,19 @@
         "myclabs/deep-copy": "self.version"
       },
       "require-dev": {
-                "doctrine/collections": "^1.0",
-                "doctrine/common": "^2.6",
-                "phpunit/phpunit": "^7.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "DeepCopy\\": "src/DeepCopy/"
-                },
-              "files": [
-                "src/DeepCopy/deep_copy.php"
-              ]
-            },
+        "doctrine/collections": "^1.0",
+        "doctrine/common": "^2.6",
+        "phpunit/phpunit": "^7.1"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "DeepCopy\\": "src/DeepCopy/"
+        },
+        "files": [
+          "src/DeepCopy/deep_copy.php"
+        ]
+      },
       "notification-url": "https://packagist.org/downloads/",
       "license": [
         "MIT"
@@ -659,16 +659,16 @@
         "php": "^5.6 || ^7.0"
       },
       "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
+      "extra": {
+        "branch-alias": {
+          "dev-master": "1.0.x-dev"
+        }
+      },
+      "autoload": {
+        "classmap": [
+          "src/"
+        ]
+      },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
@@ -832,16 +832,16 @@
             "license": [
                 "MIT"
             ],
-            "authors": [
-                {
-                    "name": "Mike van Riel",
-                  "email": "me@mikevanriel.com"
-                },
-              {
-                "name": "Jaap van Otterdijk",
-                "email": "account@ijaap.nl"
-              }
-            ],
+          "authors": [
+            {
+              "name": "Mike van Riel",
+              "email": "me@mikevanriel.com"
+            },
+            {
+              "name": "Jaap van Otterdijk",
+              "email": "account@ijaap.nl"
+            }
+          ],
           "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
           "time": "2020-02-22T12:28:44+00:00"
         },
@@ -869,16 +869,16 @@
       },
       "type": "library",
       "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "phpDocumentor\\Reflection\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
+        "branch-alias": {
+          "dev-master": "1.x-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "phpDocumentor\\Reflection\\": "src"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1323,15 +1323,15 @@
                     "dev-master": "9.0-dev"
                 }
             },
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ],
-                "files": [
-                    "src/Framework/Assert/Functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
+          "autoload": {
+            "classmap": [
+              "src/"
+            ],
+            "files": [
+              "src/Framework/Assert/Functions.php"
+            ]
+          },
+          "notification-url": "https://packagist.org/downloads/",
           "license": [
             "BSD-3-Clause"
           ],
@@ -1468,16 +1468,16 @@
         "phpunit/phpunit": "^9.0"
       },
       "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
+      "extra": {
+        "branch-alias": {
+          "dev-master": "2.0-dev"
+        }
+      },
+      "autoload": {
+        "classmap": [
+          "src/"
+        ]
+      },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
@@ -2075,16 +2075,16 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swoole/ide-helper/zipball/d52d22addfdc877de807cc85e2d8ad8a3b17ad17",
-                "reference": "d52d22addfdc877de807cc85e2d8ad8a3b17ad17",
-                "shasum": ""
+              "url": "https://api.github.com/repos/swoole/ide-helper/zipball/d52d22addfdc877de807cc85e2d8ad8a3b17ad17",
+              "reference": "d52d22addfdc877de807cc85e2d8ad8a3b17ad17",
+              "shasum": ""
             },
-            "require-dev": {
-              "guzzlehttp/guzzle": "~6.5.0",
-              "squizlabs/php_codesniffer": "~3.5.0",
-              "symfony/filesystem": "~4.3.0",
-              "zendframework/zend-code": "~3.3.0"
-            },
+          "require-dev": {
+            "guzzlehttp/guzzle": "~6.5.0",
+            "squizlabs/php_codesniffer": "~3.5.0",
+            "symfony/filesystem": "~4.3.0",
+            "zendframework/zend-code": "~3.3.0"
+          },
           "type": "library",
           "notification-url": "https://packagist.org/downloads/",
           "license": [
@@ -2101,16 +2101,16 @@
         },
     {
       "name": "symfony/console",
-      "version": "v5.0.4",
+      "version": "v5.0.5",
       "source": {
         "type": "git",
         "url": "https://github.com/symfony/console.git",
-        "reference": "91c294166c38d8c0858a86fad76d8c14dc1144c8"
+        "reference": "d29e2d36941de13600c399e393a60b8cfe59ac49"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/symfony/console/zipball/91c294166c38d8c0858a86fad76d8c14dc1144c8",
-        "reference": "91c294166c38d8c0858a86fad76d8c14dc1144c8",
+        "url": "https://api.github.com/repos/symfony/console/zipball/d29e2d36941de13600c399e393a60b8cfe59ac49",
+        "reference": "d29e2d36941de13600c399e393a60b8cfe59ac49",
         "shasum": ""
       },
       "require": {
@@ -2173,7 +2173,7 @@
       ],
       "description": "Symfony Console Component",
       "homepage": "https://symfony.com",
-      "time": "2020-01-25T15:56:29+00:00"
+      "time": "2020-02-24T15:05:31+00:00"
     },
     {
       "name": "symfony/polyfill-ctype",
@@ -2196,16 +2196,16 @@
         "ext-ctype": "For best performance"
       },
       "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.14-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Ctype\\": ""
-                },
-                "files": [
+      "extra": {
+        "branch-alias": {
+          "dev-master": "1.14-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Symfony\\Polyfill\\Ctype\\": ""
+        },
+        "files": [
                     "bootstrap.php"
                 ]
             },
@@ -2213,16 +2213,16 @@
             "license": [
                 "MIT"
             ],
-            "authors": [
-              {
-                "name": "Gert de Pagter",
-                "email": "BackEndTea@gmail.com"
-              },
-              {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-              }
-            ],
+      "authors": [
+        {
+          "name": "Gert de Pagter",
+          "email": "BackEndTea@gmail.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
       "description": "Symfony polyfill for ctype functions",
       "homepage": "https://symfony.com",
       "keywords": [
@@ -2429,12 +2429,12 @@
         "php": "^7.0"
       },
       "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
+      "autoload": {
+        "classmap": [
+          "src/"
+        ]
+      },
+      "notification-url": "https://packagist.org/downloads/",
       "license": [
         "BSD-3-Clause"
       ],
@@ -2564,15 +2564,15 @@
       "conflict": {
         "vimeo/psalm": "<3.6.0"
       },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.36 || ^7.5.13"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Webmozart\\Assert\\": "src/"
-                }
-            },
+      "require-dev": {
+        "phpunit/phpunit": "^4.8.36 || ^7.5.13"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Webmozart\\Assert\\": "src/"
+        }
+      },
       "notification-url": "https://packagist.org/downloads/",
       "license": [
         "MIT"
@@ -2691,7 +2691,8 @@
   "prefer-stable": false,
   "prefer-lowest": false,
   "platform": {
-    "php": ">=7.4"
+    "php": ">=7.4",
+    "ext-swoole": "^4.4"
   },
   "platform-dev": []
 }

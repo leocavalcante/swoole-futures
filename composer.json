@@ -16,11 +16,12 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.4",
+        "ext-swoole": "^4.4"
     },
     "autoload": {
         "files": [
-            "src/functions.php"
+            "src/facades.php"
         ],
         "psr-4": {
             "Futures\\": "src/"
@@ -32,7 +33,11 @@
         }
     },
     "scripts": {
+        "lint": "psalm --shepherd",
         "test": "phpunit",
-        "lint": "psalm"
+        "build": [
+            "@composer lint",
+            "@composer test"
+        ]
     }
 }

@@ -6,11 +6,13 @@ use PHPUnit\Framework\TestCase;
 use function Co\run;
 use function Futures\async;
 
-class FuturesTest extends TestCase
+class FutureTest extends TestCase
 {
     public function testAwait()
     {
-        $future = async(fn(): string => 'test');
-        run(fn() => $this->assertSame('test', $future->await()));
+        run(function () {
+            $future = async(fn(): string => 'foo');
+            $this->assertSame('foo', $future->await());
+        });
     }
 }
