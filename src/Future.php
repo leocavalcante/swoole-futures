@@ -7,8 +7,10 @@ use Swoole\Coroutine\Channel;
 /**
  * @template T
  */
-final class Future
+final class Future implements FutureInterface
 {
+    use Then;
+
     /**
      * @var callable(): T
      */
@@ -31,12 +33,17 @@ final class Future
     public function await()
     {
         go(
-            static function (): void {
+            function (): void {
                 $this->channel->push(($this->computation)());
             }
         );
 
         /** @psalm-var T */
         return $this->channel->pop();
+    }
+
+    public function ref(): FutureInterface
+    {
+        return $this;
     }
 }
