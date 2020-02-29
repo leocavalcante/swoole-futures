@@ -25,8 +25,8 @@ composer require leocavalcante/swoole-futures
 Creates and awaits for asynchronous computations in an alternative style than Swoole's coroutines. 
 
 ```php
-$future = Futures\async(/* Async Computation */);
-$result = $future->await();
+$future = Futures\async(fn() => 1);
+$result = $future->await(); // 1
 ```
 
 Futures are lazy, it only runs when you call `await`. 
@@ -56,6 +56,8 @@ This takes 3 seconds, not 9, Futures runs concurrently! (Order isn't guaranteed)
 Returns the result of the first finished Future.
 
 ```php
+use Swoole\Coroutine\Http\Client;
+
 $site1 = Futures\async(function() {
     $client = new Client('www.google.com', 443, true);
     $client->get('/');
@@ -98,10 +100,12 @@ print_r($doubles);
 Sequences a series of steps for a Future, is the serial analog for `join`:
 
 ```php
-$future = Futures\async(fn() => 2)
-    ->then(fn(int $i) => Futures\async(fn() => $i + 3))
-    ->then(fn(int $i) => Futures\async(fn() => $i * 4))
-    ->then(fn(int $i) => Futures\async(fn() => $i - 5));
+use function Futures\async;
+
+$future = async(fn() => 2)
+    ->then(fn(int $i) => async(fn() => $i + 3))
+    ->then(fn(int $i) => async(fn() => $i * 4))
+    ->then(fn(int $i) => async(fn() => $i - 5));
 
 echo $future->await(); // 15
 ```
