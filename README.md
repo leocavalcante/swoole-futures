@@ -3,7 +3,7 @@
 ![https://github.com/leocavalcante/swoole-futures/actions?query=workflow%3ACI](https://github.com/leocavalcante/swoole-futures/workflows/CI/badge.svg)
 ![https://shepherd.dev/github/leocavalcante/swoole-futures](https://shepherd.dev/github/leocavalcante/swoole-futures/coverage.svg)
 
-⏳ Futures + Async/Await for PHP's [Swoole](https://www.swoole.co.uk/) asynchronous run-time.
+⏳ Futures, Streams & Async/Await for PHP's [Swoole](https://www.swoole.co.uk/) asynchronous run-time.
 
 > Inspired by [futures Crate](https://crates.io/crates/futures) for Rust's Tokio asynchronous run-time.
 
