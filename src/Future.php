@@ -9,7 +9,7 @@ use Swoole\Coroutine\Channel;
  */
 final class Future implements FutureInterface
 {
-    use Then;
+    use ThenFutureTrait;
 
     /**
      * @var callable(): T

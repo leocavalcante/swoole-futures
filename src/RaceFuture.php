@@ -6,7 +6,7 @@ use Swoole\Coroutine\Channel;
 
 final class RaceFuture implements FutureInterface
 {
-    use Then;
+    use ThenFutureTrait;
 
     /**
      * @var FutureInterface[]

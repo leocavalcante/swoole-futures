@@ -22,6 +22,7 @@ composer require leocavalcante/swoole-futures
 * [Race / Select](#race)
 * [Async map](#async-map)
 * [Then](#then)
+* [Stream](#stream)
 
 ### Async / await
 
@@ -113,6 +114,22 @@ $future = async(fn() => 2)
     ->then(fn(int $i) => async(fn() => $i - 5));
 
 echo $future->await(); // 15
+```
+
+### Stream
+
+Streams values/events from `sink` to `listen` with between operations.
+
+```php
+$stream = Futures\stream()
+    ->map(fn($val) => $val + 1)
+    ->filter(fn($val) => $val % 2 === 0)
+    ->map(fn($val) => $val * 2)
+    ->listen(fn($val) => print("$val\n")); // 4 8 12 16 20
+
+foreach (range(0, 9) as $n) {
+    $stream->sink($n);
+}
 ```
 
 ---

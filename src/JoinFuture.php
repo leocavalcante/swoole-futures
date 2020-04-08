@@ -6,7 +6,7 @@ use Swoole\Coroutine\Channel;
 
 final class JoinFuture implements FutureInterface
 {
-    use Then;
+    use ThenFutureTrait;
 
     /**
      * @var FutureInterface[]

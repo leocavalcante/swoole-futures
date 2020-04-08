@@ -10,8 +10,8 @@ namespace Futures;
  */
 final class ThenFuture implements FutureInterface
 {
-    /** @use Then<T1, T2, T3> */
-    use Then;
+    /** @use ThenFutureTrait<T1, T2, T3> */
+    use ThenFutureTrait;
 
     /** @psalm-var FutureInterface<T2> */
     private FutureInterface $future;

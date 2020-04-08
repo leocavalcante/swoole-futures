@@ -58,3 +58,11 @@ function async_map(array $arr, callable $callback): array
         $arr
     );
 }
+
+/**
+ * @return Stream
+ */
+function stream(): Stream
+{
+    return new Stream();
+}

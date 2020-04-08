@@ -7,7 +7,7 @@ namespace Futures;
  * @template T2
  * @template T3
  */
-trait Then
+trait ThenFutureTrait
 {
     /**
      * @param callable(T2): FutureInterface<T3> $computation

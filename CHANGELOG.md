@@ -1,3 +1,6 @@
+# 0.3.0
+* Streams
+
 # 0.2.0
 * `Futures\race` now returns a `RaceFuture` and has a `Futures\select` alias.
 
